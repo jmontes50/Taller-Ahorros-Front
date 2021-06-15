@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
 import LoginImg from "../assets/Login.png";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/Logo.png";
+import Swal from "sweetalert2"
 
 function RegisterView() {
   const [value, setValue] = useState({
@@ -21,6 +22,13 @@ function RegisterView() {
   const handleRegister = async (e) => {
     e.preventDefault();
     let response = await registerUser(value);
+    if(error){
+      Swal.fire({
+        icon:"error",
+        title:"Algo ha sucedido",
+        timer:2000
+      })
+    }
  }
 
   return (
@@ -33,8 +41,9 @@ function RegisterView() {
             </div>
             <div className="col-md-7">
               <div className="card-body">
-                <div className="brand-wrapper">
+              <div className="brand-wrapper d-flex">
                   <img src={Logo} alt="logo" className="logo" />
+                  <h3 className="font-weight-bold ml-2">CodiAhorro</h3   >
                 </div>
                 <p className="login-card-description">Crea una cuenta</p>
                 <form onSubmit={handleRegister}>

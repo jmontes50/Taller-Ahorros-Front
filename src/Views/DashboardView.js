@@ -66,7 +66,6 @@ function DashboardView() {
 
   const transaccionesToState = async () => {
     let transaccionesObtenidas = await obtenerTransacciones(user);
-    console.log({ transaccionesObtenidas });
     setTransacciones(transaccionesObtenidas);
   };
 

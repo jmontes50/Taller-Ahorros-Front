@@ -19,7 +19,7 @@ function LoginView() {
   const handleLogin = async (e) => {
     e.preventDefault();
     let response = await loginUser(value);
-    console.log({ response });
+    console.log({response})
   };
 
   return (

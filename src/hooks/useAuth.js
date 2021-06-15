@@ -10,36 +10,35 @@ export default function useAuth() {
 
   const registerUser = async (data) => {
     const { nombre, apellido, correo, password } = data;
-    console.log({data})
     let headers = {
       "Content-Type": "application/json",
     };
+
+    let URL = "https://taller-ahorros.herokuapp.com"
     return axios
-      .post(`http://localhost:5000/register`, {
+      .post(`${URL}/register`, {
         nombre,
         apellido,
         correo,
         password,
       }, { headers })
       .then(async (res) => {
-        console.log({res})
         setAuthUser(res.data.access_token);
         history.push("/");
       })
       .catch((err) => {
-        console.log(err)
+        console.log({err})
         setError(err.data);
       });
   };
 
   const loginUser = async (data) => {
-    console.log({data})
     const { email, password } = data;
     let headers = {
       "Content-Type": "application/json",
     };
     return axios
-      .post(`http://localhost:5000/login`, {
+      .post(`${URL}/login`, {
         email,
         password,
       }, { headers })
@@ -48,6 +47,7 @@ export default function useAuth() {
         history.push("/dashboard");
       })
       .catch((err) => {
+        console.log({err})
         setError(err.data);
       });
   };
