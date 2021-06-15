@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.rounded{
+  border-radius: 50% !important;
+  max-height: 50px;
+}
+
+.text-egreso{
+  color:#E60000;
+}
+
+.text-ingreso{
+  color:#069BFF;
+}
