@@ -1,5 +1,7 @@
 # Taller Ahorros FrontEnd
 
+Este proyecto requiere que tengas Node.js en una versión superior a la 12.
+
 ## Para Instalar
 
 In the project directory, you can run:
