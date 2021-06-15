@@ -4,7 +4,7 @@ Este proyecto requiere que tengas Node.js en una versión superior a la 12.
 
 Descargalo de aquí!
 
-[I'm an inline-style link](https://nodejs.org/es/)
+[Go to Node!](https://nodejs.org/es/)
 
 ## Para Instalar
 
