@@ -9,6 +9,7 @@ import ZeroTransactions from "../components/ZeroTransactions";
 import { UserContext } from "../context/UserContext";
 import { Modal, Button } from "react-bootstrap";
 import { Pie } from "react-chartjs-2";
+import Swal from "sweetalert2"
 
 function DashboardView() {
   const [fecha, setFecha] = useState("2021-06-15");
@@ -33,9 +34,10 @@ function DashboardView() {
   const balanceToState = async () => {
     let rango = {
       fecha_inicio: "2021-01-01",
-      fecha_fin: "2021-31-12",
+      fecha_fin: "2021-12-31"
     };
     let { ingresos, egresos } = await obtenerBalance(rango, user);
+    console.log(ingresos, egresos)
     setBalance([ingresos, egresos]);
   };
 
@@ -55,6 +57,12 @@ function DashboardView() {
     transaccionesToState();
     balanceToState();
     setMovimiento({...movimientoInitial})
+    Swal.fire({
+      icon:"success",
+      title:"Operación Guardada",
+      showConfirmButton:false,
+      timer:2000
+    })
   };
 
   const handleFecha = (e) => {

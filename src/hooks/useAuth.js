@@ -8,13 +8,17 @@ export default function useAuth() {
   const { setAuthUser } = useContext(UserContext);
   const [error, setError] = useState(null);
 
+  // const URL = process.env.REACT_APP_URL_API
+  const URL = "https://taller-ahorros.herokuapp.com"
+
   const registerUser = async (data) => {
     const { nombre, apellido, correo, password } = data;
     let headers = {
       "Content-Type": "application/json",
     };
+    
+    console.log({URL})
 
-    let URL = "https://taller-ahorros.herokuapp.com"
     return axios
       .post(`${URL}/register`, {
         nombre,
@@ -33,6 +37,7 @@ export default function useAuth() {
   };
 
   const loginUser = async (data) => {
+    console.log({URL})
     const { email, password } = data;
     let headers = {
       "Content-Type": "application/json",

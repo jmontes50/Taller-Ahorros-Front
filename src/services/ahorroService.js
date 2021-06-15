@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const URL = "https://taller-ahorros.herokuapp.com";
+// const URL = process.env.REACT_APP_URL_API
+const URL = "https://taller-ahorros.herokuapp.com"
 
 const obtenerTransacciones = async (token) => {
   try {
@@ -34,6 +35,7 @@ const obtenerBalance = async (rango,token) => {
     let { data } = await axios.post(`${URL}/balance`,rango ,configuracion);
     return data.content
   } catch (error) {
+    console.log(error)
     throw error
   }
 }
