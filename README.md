@@ -2,18 +2,23 @@
 
 Este proyecto requiere que tengas Node.js en una versión superior a la 12.
 
+Descargalo de aquí!
+
+[I'm an inline-style link](https://nodejs.org/es/)
+
 ## Para Instalar
 
-In the project directory, you can run:
+En el directorio del proyecto, con una terminal ejecutar.
 
 ### `npm install`
 
 ## Para Ejecutar
 
-In the project directory, you can run:
+En el directorio del proyecto, con una terminal ejecutar.
 
 ### `npm start`
 
 Esto iniciara un servidor por defecto en:
 Open [http://localhost:3000](http://localhost:3000) 
 
+Happy Coding!
